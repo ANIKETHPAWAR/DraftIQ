@@ -10,6 +10,8 @@ import {
   MobileNavMenu,
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar"
+import {Sparkles } from 'lucide-react'
+import FeaturesSectionDemo from '@/components/features-section-demo-2'
 
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -22,7 +24,7 @@ const Home = () => {
   ]
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-black">
       <Navbar>
         <NavBody>
           <NavbarLogo />
@@ -62,23 +64,19 @@ const Home = () => {
 
       {/* Content to enable scrolling */}
       <div className="px-4 py-20">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h1 className="text-4xl font-bold text-center">Welcome to DraftIQ</h1>
-          <h3 className="text-2xl font-semibold text-center">Write Better 
-          </h3>
-          <h3 className="text-2xl font-semibold text-center text-blue-200">Write faster 
-          </h3>
-          <p className="text-lg text-center text-gray-600">
-            Scroll down to see the navbar animation
-          </p>
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div key={i} className="p-8 bg-gray-100 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">Section {i + 1}</h2>
-              <p className="text-gray-700">
-              transform your ideas into compelling articles in seconds. Professional content creation powered by advanced AI.
-              </p>
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto  ">
+          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-100 rounded-lg mx-auto w-fit text-neutral-600 text-sm mb-3">
+            <Sparkles className="w-5 h-5 text-neutral-600" />
+            <span className="text-neutral-600 font-medium">AI-Powered Content Creation</span>
+          </div>
+          <h1 className="text-3xl font-semibold text-center tracking-tight leading-tight text-[#FEFAEF] ">Welcome to DraftIQ</h1>
+          
+          <p className="text-m text-neutral-400 mb-12 text-center">
+              Transform your ideas into compelling articles in seconds. 
+              Professional content creation powered by advanced AI.
+            </p>
+         
+            <FeaturesSectionDemo />
         </div>
       </div>
     </div>
