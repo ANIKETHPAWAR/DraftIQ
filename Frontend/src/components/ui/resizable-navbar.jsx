@@ -91,7 +91,7 @@ export const NavItems = ({
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-[#FEFAEF] dark:text-neutral-300"
+          className="relative px-4 py-2 text-[#FEFAEF] hover:text-zinc-800 dark:text-neutral-300"
           key={`link-${idx}`}
           href={item.link}>
           {hovered === idx && (
@@ -131,10 +131,13 @@ export const MobileNav = ({
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible && "bg-white/20 dark:bg-neutral-950/80",
         className
       )}>
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(child, { visible })
+          : child)}
     </motion.div>
   );
 };
@@ -145,7 +148,7 @@ export const MobileNavHeader = ({
 }) => {
   return (
     <div
-      className={cn("flex w-full flex-row items-center justify-between", className)}>
+      className={cn("flex w-full flex-row items-center justify-between text-white", className)}>
       {children}
     </div>
   );
@@ -155,17 +158,24 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose
+  onClose,
+  visible
 }) => {
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ 
+            opacity: 1,
+            backdropFilter: "blur(10px)"
+          }}
           exit={{ opacity: 0 }}
+          style={{
+            backdropFilter: "blur(10px)"
+          }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] dark:bg-neutral-950",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white/20 dark:bg-neutral-950/80 backdrop-blur-md text-white px-4 py-8 shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]",
             className
           )}>
           {children}
@@ -180,9 +190,9 @@ export const MobileNavToggle = ({
   onClick
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="text-white dark:text-white" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-white dark:text-white" onClick={onClick} />
   );
 };
 
@@ -206,7 +216,7 @@ export const NavbarButton = ({
   as: Tag = "a",
   children,
   className,
-  variant = "primary",
+  variant = "gradient",
   ...props
 }) => {
   const baseStyles =

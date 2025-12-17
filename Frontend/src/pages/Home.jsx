@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/resizable-navbar"
 import {Sparkles } from 'lucide-react'
 import FeaturesSectionDemo from '@/components/features-section-demo-2'
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -49,7 +50,7 @@ const Home = () => {
               <a
                 key={idx}
                 href={item.link}
-                className="text-neutral-600 dark:text-neutral-300"
+                className="text-white font-semibold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -65,16 +66,21 @@ const Home = () => {
       {/* Content to enable scrolling */}
       <div className="px-4 py-20">
         <div className="max-w-4xl mx-auto  ">
-          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-100 rounded-lg mx-auto w-fit text-neutral-600 text-sm mb-3">
-            <Sparkles className="w-5 h-5 text-neutral-600" />
-            <span className="text-neutral-600 font-medium">AI-Powered Content Creation</span>
+          <div className="flex items-center justify-center gap-2 px-4 py-2  bg-black border border-border rounded-lg mx-auto w-fit text-neutral-600 text-sm mb-6">
+            <Sparkles className="w-5 h-5  text-blue-600" />
+            <span className="text-neutral-600 font-medium text-sm">AI-Powered Content Creation</span>
           </div>
-          <h1 className="text-3xl font-semibold text-center tracking-tight leading-tight text-[#FEFAEF] ">Welcome to DraftIQ</h1>
+          <h1 className="text-3xl font-semibold text-center tracking-tight leading-tight mb-6 text-[#FEFAEF] ">Welcome to DraftIQ</h1>
           
-          <p className="text-m text-neutral-400 mb-12 text-center">
+          <p className="text-m text-neutral-400 mb-6 text-center">
               Transform your ideas into compelling articles in seconds. 
               Professional content creation powered by advanced AI.
             </p>
+            <div className="flex justify-center mb-6">
+              <HoverBorderGradient children='Start writing' className='text-center cursor-pointer' />
+            </div>
+
+            <div className="pt-8 text-sm text-muted-foreground text-center">Trusted by 10,000+ content creators worldwide</div>
          
             <FeaturesSectionDemo />
         </div>
