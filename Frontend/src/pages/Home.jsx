@@ -13,15 +13,15 @@ import {
 import {Sparkles } from 'lucide-react'
 import FeaturesSectionDemo from '@/components/features-section-demo-2'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
-
+import AI_Prompt from '@/components/kokonutui/ai-prompt'
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { name: "Home", link: "#" },
-    { name: "About", link: "#" },
     { name: "Features", link: "#" },
-    { name: "Contact", link: "#" },
+    { name: "How It Works", link: "#" },
+    { name: "Pricing", link: "#" },
+    { name: "FAQ", link: "#" },
   ]
 
   return (
@@ -80,8 +80,13 @@ const Home = () => {
               <HoverBorderGradient children='Start writing' className='text-center cursor-pointer' />
             </div>
 
-            <div className="pt-8 text-sm text-muted-foreground text-center">Trusted by 10,000+ content creators worldwide</div>
-         
+            <div className="pt-8 text-sm text-muted-foreground text-center mb-15">Trusted by 10,000+ content creators worldwide</div>
+            <div className='flex justify-center'>
+
+            <AI_Prompt />
+            </div>
+
+           
             <FeaturesSectionDemo />
         </div>
       </div>
