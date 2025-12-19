@@ -200,7 +200,7 @@ const IconsFeature = () => {
             <motion.div
                 className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-100/80 to-neutral-100 dark:from-neutral-800/80 dark:to-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 group transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <OpenAI className="w-7 h-7 dark:hidden transition-transform " />
+                    <OpenAI className="w-7 h-7 text-neutral-900 dark:hidden transition-transform " />
                     <OpenAIDark className="w-7 h-7 hidden dark:block transition-transform " />
                 </div>
                 <span
@@ -211,7 +211,7 @@ const IconsFeature = () => {
             <motion.div
                 className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-100/80 to-neutral-100 dark:from-neutral-800/80 dark:to-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 group transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <Anthropic className="w-7 h-7 dark:hidden transition-transform " />
+                    <Anthropic className="w-7 h-7 text-neutral-900 dark:hidden transition-transform " />
                     <AnthropicDark className="w-7 h-7 hidden dark:block transition-transform " />
                 </div>
                 <span
