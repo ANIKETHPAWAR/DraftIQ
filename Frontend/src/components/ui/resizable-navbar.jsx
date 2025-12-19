@@ -7,6 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import React, { useRef, useState } from "react";
 
@@ -88,19 +89,19 @@ export const NavItems = ({
         className
       )}>
       {items.map((item, idx) => (
-        <a
+        <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className="relative px-4 py-2 text-[#FEFAEF] hover:text-zinc-800 dark:text-neutral-300"
           key={`link-${idx}`}
-          href={item.link}>
+          to={item.link}>
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
               className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800" />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -198,8 +199,8 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
+    <Link
+      to="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
       <img
         src="https://assets.aceternity.com/logo-dark.png"
@@ -207,13 +208,13 @@ export const NavbarLogo = () => {
         width={30}
         height={30} />
       <span className="font-medium text-[#FEFAEF] dark:text-black">DraftIQ</span>
-    </a>
+    </Link>
   );
 };
 
 export const NavbarButton = ({
   href,
-  as: Tag = "a",
+  as: Tag,
   children,
   className,
   variant = "gradient",
@@ -231,12 +232,17 @@ export const NavbarButton = ({
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
+  const Component = href ? Link : (Tag || "button");
+  const linkProps = href ? { to: href } : {};
+  const buttonProps = !href && !Tag ? { type: "button" } : {};
+
   return (
-    <Tag
-      href={href || undefined}
+    <Component
+      {...linkProps}
+      {...buttonProps}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}>
       {children}
-    </Tag>
+    </Component>
   );
 };
