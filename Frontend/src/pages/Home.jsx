@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   Navbar,
   NavBody,
@@ -11,15 +12,16 @@ import {
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar"
 import {Sparkles } from 'lucide-react'
-import FeaturesSectionDemo from '@/components/features-section-demo-2'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import AI_Prompt from '@/components/kokonutui/ai-prompt'
+import Features from './Features'
+import Hiw from './Hiw'
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { name: "Features", link: "#" },
-    { name: "How It Works", link: "#" },
+    { name: "Features", link: "/features" },
+    { name: "How It Works", link: "/how-it-works" },
     { name: "Pricing", link: "#" },
     { name: "FAQ", link: "#" },
   ]
@@ -47,14 +49,14 @@ const Home = () => {
             onClose={() => setMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={idx}
-                href={item.link}
+                to={item.link}
                 className="text-white font-semibold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <NavbarButton href="#" variant="primary">
               Get Started
@@ -81,13 +83,13 @@ const Home = () => {
             </div>
 
             <div className="pt-8 text-sm text-muted-foreground text-center mb-15">Trusted by 10,000+ content creators worldwide</div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-10'>
 
             <AI_Prompt />
             </div>
 
-           
-            <FeaturesSectionDemo />
+           <Features showNavbar={false} />
+           <Hiw showNavbar={false} />
         </div>
       </div>
     </div>
