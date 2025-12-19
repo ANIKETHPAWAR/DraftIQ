@@ -558,7 +558,7 @@ const BentoCard = ({
             variants={fadeInUp}
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="h-full"
+            className="h-full "
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={handleMouseLeave}
             onMouseMove={handleMouseMove}
@@ -571,9 +571,9 @@ const BentoCard = ({
                 href={item.href || "#"}
                 className={`
                     group relative flex flex-col gap-4 h-full rounded-xl p-5
-                    bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 
+                    bg-gradient-to-b from-black-50/60 via-black-50/40 to-neutral-50/30 
                     dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30
-                    border border-neutral-200/60 dark:border-neutral-800/60
+                    border border-black-200/60 dark:border-neutral-800/60
                     before:absolute before:inset-0 before:rounded-xl
                     before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent 
                     dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent
@@ -679,7 +679,7 @@ const BentoCard = ({
 export default function BentoGrid() {
     return (
         <section
-            className="relative py-24 sm:py-32 bg-white dark:bg-black overflow-hidden">
+            className="relative py-24 sm:py-32 bg-neutral-900 rounded-2xl dark:bg-black overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Bento Grid */}
                 <motion.div
