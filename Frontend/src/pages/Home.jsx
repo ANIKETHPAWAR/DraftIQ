@@ -88,10 +88,12 @@ const Home = () => {
             <AI_Prompt />
             </div>
 
-           <Features showNavbar={false} />
-           <Hiw showNavbar={false} />
+           
         </div>
       </div>
+
+      <Features showNavbar={false} />
+      <Hiw showNavbar={false} />
     </div>
   )
 }
