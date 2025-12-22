@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import FeaturesSectionDemo from '@/components/features-section-demo-2'
 import {
-  Navbar,
-  NavBody,
-  NavItems,
-  NavbarLogo,
-  NavbarButton,
-  MobileNav,
-  MobileNavHeader,
-  MobileNavMenu,
-  MobileNavToggle,
-} from "@/components/ui/resizable-navbar"
+    Navbar,
+    NavBody,
+    NavItems,
+    NavbarLogo,
+    NavbarButton,
+    MobileNav,
+    MobileNavHeader,
+    MobileNavMenu,
+    MobileNavToggle,
+  } from "@/components/ui/resizable-navbar"
 
 const Features = ({ showNavbar = true }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -65,7 +65,7 @@ const Features = ({ showNavbar = true }) => {
       )}
 
       <div className={showNavbar ? "px-4 py-20" : ""}>
-        <FeaturesSectionDemo />
+<FeaturesSectionDemo />
       </div>
     </div>
   )
