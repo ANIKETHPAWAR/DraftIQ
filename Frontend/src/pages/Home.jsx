@@ -16,6 +16,7 @@ import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import AI_Prompt from '@/components/kokonutui/ai-prompt'
 import Features from './Features'
 import Hiw from './Hiw'
+import Footer from '@/components/Footer'
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -82,7 +83,7 @@ const Home = () => {
               <HoverBorderGradient children='Start writing' className='text-center cursor-pointer' />
             </div>
 
-            <div className="pt-8 text-sm text-muted-foreground text-center mb-15">Trusted by 10,000+ content creators worldwide</div>
+            <div className="pt-8 text-sm text-muted-foreground text-center mb-10">Trusted by 10,000+ content creators worldwide</div>
             <div className='flex justify-center mb-10'>
 
             <AI_Prompt />
@@ -94,6 +95,7 @@ const Home = () => {
 
       <Features showNavbar={false} />
       <Hiw showNavbar={false} />
+      <Footer />
     </div>
   )
 }
