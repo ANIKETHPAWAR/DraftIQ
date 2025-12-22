@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import FeaturesSectionDemo from '@/components/features-section-demo-2'
+import Footer from '@/components/Footer'
 import {
     Navbar,
     NavBody,
@@ -67,6 +68,7 @@ const Features = ({ showNavbar = true }) => {
       <div className={showNavbar ? "px-4 py-20" : ""}>
 <FeaturesSectionDemo />
       </div>
+      {showNavbar && <Footer />}
     </div>
   )
 }

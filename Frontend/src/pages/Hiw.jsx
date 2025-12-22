@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import BentoGrid from '@/components/kokonutui/bento-grid'
+import Footer from '@/components/Footer'
 import {
   Navbar,
   NavBody,
@@ -67,6 +68,7 @@ const Hiw = ({ showNavbar = true }) => {
       <div className={showNavbar ? "px-4 py-20" : ""}>
         <BentoGrid />
       </div>
+      {showNavbar && <Footer />}
     </div>
   )
 }
