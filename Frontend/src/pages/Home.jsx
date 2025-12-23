@@ -77,7 +77,7 @@ const Home = () => {
           
           <p className="text-m text-neutral-400 mb-6 text-center">
               Transform your ideas into compelling articles in seconds. 
-              Professional content creation powered by advanced A.
+              Professional content creation powered by advanced AI.
             </p>
             <div className="flex justify-center mb-6">
               <HoverBorderGradient children='Start writing' className='text-center cursor-pointer' />
